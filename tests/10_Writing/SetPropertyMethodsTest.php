@@ -146,8 +146,8 @@ class SetPropertyMethodsTest extends \PHPCR\Test\BaseCase
 
     public function testSetPropertyMultivalue()
     {
-        $prop = $this->node->setProperty('multivalue', array(1, 2, 3));
-        $this->assertEquals(array(1,2,3), $this->node->getPropertyValue('multivalue'));
+        $prop = $this->node->setProperty('multivalue', array(1, 2, 3, 1));
+        $this->assertEquals(array(1,2,3, 1), $this->node->getPropertyValue('multivalue'));
         $this->assertEquals(\PHPCR\PropertyType::LONG, $prop->getType());
         $this->assertTrue($prop->isMultiple());
 
